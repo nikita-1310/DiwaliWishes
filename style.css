@@ -1,0 +1,100 @@
+body {
+    font-family: "Sofia", sans-serif;
+    text-shadow: 3px 3px 3px #ababab;
+    background: #212121;
+  }
+  .container{
+    max-width: 1200px;
+    position: fixed;
+    inset: 0;
+    margin:50px auto;
+  }
+  .container .title{
+    font-size: 6vw;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .container span{
+    font-size: 3vw;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .fireworks{
+    list-style-type: none;
+    padding: 0 300px;
+  }
+  .fireworks li{
+    display: inline-block;
+    margin: 20px;
+    height: 50px;
+    width: 50px;
+    background-color: #8d6e63;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+    position: relative;
+    border-radius: 500px;
+    
+  }
+  .fireworks li::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: #212121;
+    width: 100%;
+    border-radius: 500px;
+    top: -40%;
+  }
+  .fireworks li::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: #212121;
+    width: 100%;
+    border-radius: 500px;
+    top: -40%;
+  }
+  .fireworks li span{
+    display: inline-block;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index:1;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    transform: rotate(45deg);
+    animation: fire 0.3s ease infinite;
+  }
+  .fireworks li:nth-child(1) span{
+    animation-delay: 0.5s;
+  }
+  .fireworks li:nth-child(2) span{
+    animation-delay: 1s;
+  }
+  .fireworks li:nth-child(3) span{
+    animation-delay: 1.5s;
+  }
+  .fireworks li:nth-child(4) span{
+    animation-delay: 2s;
+  }
+  .fireworks li:nth-child(5) span{
+    animation-delay: 2.5s;
+  }
+  .fireworks li:nth-child(6) span{
+    animation-delay: 3s;
+  }
+  @keyframes fire {
+    0%,
+    100%{
+        transform: rotate(55deg);
+        width: 30px;
+        background: linear-gradient(90deg, orange, orangered);
+    }
+    50%{
+        transform: rotate(35deg);
+        width: 18px;
+        background: linear-gradient(90deg, orangered, orange);
+    }
+  }
